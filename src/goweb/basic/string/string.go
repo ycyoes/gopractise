@@ -8,6 +8,13 @@ import (
 func main() {
 	fmt.Println("Hello World!")
 	editStr()
+	edit2()
+}
+
+func edit2() {
+	s := "hello"
+	s = "c" + s[1:]
+	fmt.Printf("%s\n", s)
 }
 
 //Go语言中字符串是不可变的，可按如下方式修改
