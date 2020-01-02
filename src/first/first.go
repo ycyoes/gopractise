@@ -2,7 +2,10 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"io"
+	"strings"
 )
 
 type iAdder func(int) (int, iAdder)
@@ -23,6 +26,34 @@ func main() {
 		var s int
 		s, b = b(i)
 		fmt.Printf("0 + 1 + 2 + ... + %d = %d\n", i, s)
+	}
+
+	fmt.Println("---为函数实现接口---")
+	f := Fibonacci()
+	printFileContents(f)
+}
+
+//为函数实现接口
+type Generate func() int
+
+func Fibonacci() Generate {
+	a, b := 0, 1
+	return func() int {
+		a, b = b, a+b
+		return a
+	}
+}
+
+func (gen Generate) Read(p []byte) (n int, err error) {
+	nextNum := gen()
+	numString := fmt.Sprintf("%d \n", nextNum)
+	return strings.NewReader(numString).Read(p)
+}
+
+func printFileContents(reader io.Reader) {
+	scanner := bufio.NewScanner(reader)
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
 	}
 }
 
