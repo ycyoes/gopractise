@@ -11,6 +11,7 @@ func main() {
 	edit2()
 }
 
+//字符串切片
 func edit2() {
 	s := "hello"
 	s = "c" + s[1:]
