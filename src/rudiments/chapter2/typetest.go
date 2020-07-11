@@ -7,6 +7,10 @@ import (
 
 func main() {
 	fmt.Println(sayHello("ycyoes"))
+	var b bool
+	fmt.Println(b)
+	b = true
+	fmt.Println(b)
 }
 
 func sayHello(s string) string {
