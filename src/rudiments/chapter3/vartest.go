@@ -5,6 +5,8 @@ import (
 	"fmt"
 )
 
+const greeting string = "Hello, world!"
+
 func main() {
 	var i int
 	var f float32
@@ -25,4 +27,7 @@ func main() {
 			fmt.Printf("Printing 'i' variable from outer block %v\n", i)
 		}
 	}
+
+	fmt.Printf("%v\n", &s)
+	fmt.Println("greeting: ", greeting)
 }
