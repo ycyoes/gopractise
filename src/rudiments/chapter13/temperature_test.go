@@ -7,7 +7,7 @@ import (
 
 type temperatureTest struct {
 	i        float64
-	expected Temperature
+	expected temperature
 }
 
 var CtoFTests = []temperatureTest{
