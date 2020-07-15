@@ -16,5 +16,5 @@ func translate(s string) string {
 
 func Greeting(name, locale string) string {
 	salutation := translate(locale)
-	return (salutation + name)
+	return (salutation + " " + name)
 }
