@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 )
 
 type Animal struct {
@@ -17,4 +18,9 @@ func main() {
 	}
 	fmt.Printf("%v\n", a)
 	fmt.Printf("%+v\n", a)
+	
+	os.
+	for i, arg := range os.Args {
+		fmt.Println("argument", i, "is", arg)
+	}
 }
