@@ -15,11 +15,11 @@ func main() {
 
 	text, _ := reader.ReadString('\n')
 	text = strings.Replace(text, "\n", "", -1)
-	fmt.Println("text: ", text)
+	fmt.Println("[DEBUG] text is: ", text)
 	fmt.Println(text == "John")
 	fmt.Println("John" == "John")
 	fmt.Println(reflect.TypeOf(text))
-	if text == "John" {
+	if strings.ToLower(text) == "john" {
 		fmt.Println("You won! You win chocolate!")
 	} else {
 		fmt.Println("You didn't win. Better luck next time")
