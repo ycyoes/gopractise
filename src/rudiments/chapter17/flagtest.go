@@ -14,4 +14,5 @@ func main() {
 	fmt.Println("value of s: ", *s)
 	fmt.Println("value of i: ", *i)
 	fmt.Println("value of b: ", *b)
+
 }
