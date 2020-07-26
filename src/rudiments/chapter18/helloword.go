@@ -24,6 +24,6 @@ func helloWorld(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(`<?xml version="1.0" encoding="utf-8"?><Message>Hello World</Message>`))
 	default:
 		w.Header().Set("Content-Type", "text/plain;charset=utf-8")
-		w.Write([]byte("Hello World\n text/plain"))
+		w.Write([]byte("Hello World\n text/plain \n"))
 	}
 }
