@@ -15,5 +15,6 @@ func helloWorld(w http.ResponseWriter, r *http.Request) {
 		http.NotFound(w, r)
 		return
 	}
+	w.Header().Set("Content-Type", "application/json;charset=utf-8")
 	w.Write([]byte("Hello World\n"))
 }
