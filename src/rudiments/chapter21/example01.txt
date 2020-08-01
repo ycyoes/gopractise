@@ -1,0 +1,2 @@
+hello world, read file and print the content to terminal.
+hello world, read file and print the content to terminal！
