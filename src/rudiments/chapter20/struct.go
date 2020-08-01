@@ -2,7 +2,9 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 )
 
 type Person struct {
@@ -20,4 +22,12 @@ func main() {
 		Hobbies: hobbies,
 	}
 	fmt.Printf("%+v\n", p)
+
+	jsonByteData, err := json.Marshal(p)
+	if err != nil {
+		log.Fatal(err)
+	}
+	jsonStringData := string(jsonByteData)
+	fmt.Println(jsonStringData)
+
 }
