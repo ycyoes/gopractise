@@ -14,6 +14,7 @@ func main() {
 	debug := os.Getenv("DEBUG")
 	client := &http.Client{}
 	request, err := http.NewRequest("GET", "https://ifconfig.co", nil)
+	//设置返回信息的格式
 	request.Header.Add("Accept", "application/json")
 	if err != nil {
 		log.Fatal(err)
