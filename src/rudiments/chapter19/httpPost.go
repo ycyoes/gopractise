@@ -1,4 +1,4 @@
-// httpGet
+// httpPost
 package main
 
 import (
@@ -6,16 +6,16 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"strings"
 )
 
 func main() {
-	response, err := http.Get("https://ifconfig.io/")
+	postData := strings.NewReader(`{ "some": "json" }`)
+	response, err := http.Post("https://httpbin.org/post", "application/json", postData)
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	defer response.Body.Close()
-
 	body, err := ioutil.ReadAll(response.Body)
 	if err != nil {
 		log.Fatal(err)

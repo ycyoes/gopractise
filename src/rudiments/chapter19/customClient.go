@@ -1,4 +1,4 @@
-// httpGet
+// customClient
 package main
 
 import (
@@ -9,13 +9,14 @@ import (
 )
 
 func main() {
-	response, err := http.Get("https://ifconfig.io/")
+	client := &http.Client{}
+	request, err := http.NewRequest("GET", "https://ifconfig.co", nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 
+	response, err := client.Do(request)
 	defer response.Body.Close()
-
 	body, err := ioutil.ReadAll(response.Body)
 	if err != nil {
 		log.Fatal(err)
